@@ -5,8 +5,7 @@ export class WelcomePage extends Component {
     return (
       <div className="welcome-page">
         <div className="context">
-          <h1>Welcome to Quizine</h1>
-          <h2>Where your restaurants become profitable</h2>
+          <h1>Welcome to TestTakers</h1>
         </div>
 
         <div className="area">

@@ -3,7 +3,6 @@ import {withRouter} from 'react-router-dom'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import FunctionsIcon from '@material-ui/icons/Functions'
 import InsertChartOutlinedIcon from '@material-ui/icons/InsertChartOutlined'
-import SidebarNav from './SidebarNav'
 import UserProfile from './UserProfile'
 import {Divider} from '@material-ui/core'
 
@@ -35,7 +34,6 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <div className="sidebar-nav-cont">
         <UserProfile />
-        <SidebarNav pages={pages} />
       </div>
     </div>
   )

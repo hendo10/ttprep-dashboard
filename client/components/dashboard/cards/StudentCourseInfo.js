@@ -1,8 +1,8 @@
 import React from 'react'
 import clsx from 'clsx'
 import {makeStyles} from '@material-ui/styles'
-import {Card, CardContent, Grid, Typography, Avatar} from '@material-ui/core'
-import HomeIcon from '@material-ui/icons/Home'
+import {Card, CardContent, Grid, Typography} from '@material-ui/core'
+// import HomeIcon from '@material-ui/icons/Home'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const RestaurantInfo = props => {
+const StudentCourseInfo = props => {
   const {className, ...rest} = props
 
   const classes = useStyles()
@@ -55,21 +55,31 @@ const RestaurantInfo = props => {
               gutterBottom
               variant="body2"
             >
-              YOUR RESTAURANT
+              Course Details
             </Typography>
             <Typography variant="h5">
               {props.restaurantInfo.restaurantName}
             </Typography>
           </Grid>
-          <Grid item>
-            <Avatar className={classes.avatar}>
-              <HomeIcon className={classes.icon} />
-            </Avatar>
-          </Grid>
         </Grid>
         <div className={classes.difference}>
           <Typography className={classes.caption} variant="caption">
-            {props.restaurantInfo.location}
+            Scarsdale
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            New York
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            New York
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            10022
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            123-456-7890
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            john@gmail.com
           </Typography>
         </div>
       </CardContent>
@@ -77,4 +87,4 @@ const RestaurantInfo = props => {
   )
 }
 
-export default RestaurantInfo
+export default StudentCourseInfo

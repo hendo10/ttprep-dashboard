@@ -44,28 +44,34 @@ function getSorting(order, orderBy) {
 
 const headCells = [
   {
-    id: 'dayOfWeek',
+    id: 'test',
     numeric: false,
     disablePadding: true,
-    label: 'Day of the Week'
+    label: 'Test'
   },
   {
-    id: 'numberOfGuests',
+    id: 'date',
     numeric: true,
     disablePadding: false,
-    label: 'Guests (ppl)'
+    label: 'Date'
   },
   {
-    id: 'dayRevenue',
+    id: 'reading_writing',
     numeric: true,
     disablePadding: false,
-    label: 'Revenue ($, K)'
+    label: 'Reading/Writing'
+  },
+  {
+    id: 'math',
+    numeric: true,
+    disablePadding: false,
+    label: 'Math'
   },
   {
     id: 'sum',
     numeric: true,
     disablePadding: false,
-    label: 'Menu Items Sold (qty)'
+    label: 'Total'
   }
 ]
 

@@ -34,28 +34,17 @@ class PeakTimeGraph extends Component {
   }
 
   render() {
-    const labels = [
-      '11am',
-      '12pm',
-      '1pm',
-      '2pm',
-      '3pm',
-      '4pm',
-      '5pm',
-      '6pm',
-      '7pm',
-      '8pm',
-      '9pm'
-      // '10pm' NO ORDERS AT 10PM IN CURRENT DB
-    ]
-    const arrPerc = this.props.peakTimeOrders[this.state.selectedOption]
+    const labels = ['#R', '#W', '%R', 'Prev']
+    // const arrPerc = this.props.peakTimeOrders[this.state.selectedOption]
+
+    const testResults = ['insert dummy data']
 
     const chartData = {
       labels: labels,
       datasets: [
         {
           label: 'Percentage',
-          data: arrPerc,
+          data: testResults,
           backgroundColor: 'yellow'
         }
       ]

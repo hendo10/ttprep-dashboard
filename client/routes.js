@@ -2,16 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {
-  Login,
-  Signup,
-  UserHome,
-  Summary,
-  CustomizedQueryContainer,
-  WelcomePage,
-  Sidebar,
-  BusinessAnalytics
-} from './components'
+import {Login, Signup, StudentSummary, WelcomePage, Sidebar} from './components'
 import {me} from './store'
 /**
  * COMPONENT
@@ -26,10 +17,10 @@ class Routes extends Component {
 
     return isLoggedIn ? (
       <div className="routes-cont">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Switch>
-          <Route exact path="/" component={Summary} />
-          <Route path="/summary" component={Summary} />
+          <Route exact path="/" component={StudentSummary} />
+          <Route path="/summary" component={StudentSummary} />
         </Switch>
       </div>
     ) : (

@@ -1,11 +1,8 @@
 import React from 'react'
 import clsx from 'clsx'
-import PropTypes from 'prop-types'
 import {makeStyles} from '@material-ui/styles'
-import {Card, CardContent, Grid, Typography, Avatar} from '@material-ui/core'
-import StarIcon from '@material-ui/icons/Star'
-import Rating from '@material-ui/lab/Rating'
-import Box from '@material-ui/core/Box'
+import {Card, CardContent, Grid, Typography} from '@material-ui/core'
+// import HomeIcon from '@material-ui/icons/Home'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 700
   },
   avatar: {
-    backgroundColor: theme.palette.warning.light,
+    backgroundColor: theme.palette.primary.main,
     height: 50,
     width: 50
   },
@@ -42,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const YelpRating = props => {
+const StudentInfo = props => {
   const {className, ...rest} = props
 
   const classes = useStyles()
@@ -58,29 +55,36 @@ const YelpRating = props => {
               gutterBottom
               variant="body2"
             >
-              YELP RATING
+              Student Details
             </Typography>
-            <Box component="fieldset" mb={3} borderColor="transparent">
-              <Typography variant="h6">
-                {props.yelpRating.toFixed(1)}/5.0
-              </Typography>
-              <Rating name="yelp-rating" value={props.yelpRating} />
-            </Box>
-          </Grid>
-          <Grid item>
-            <Avatar className={classes.avatar}>
-              <StarIcon className={classes.icon} />
-            </Avatar>
+            <Typography variant="h5">
+              {props.restaurantInfo.restaurantName}
+            </Typography>
           </Grid>
         </Grid>
-        {/* <div className={classes.difference}>
+        <div className={classes.difference}>
           <Typography className={classes.caption} variant="caption">
-            current rating
+            52 Gansevoort Street
           </Typography>
-        </div> */}
+          <Typography className={classes.caption} variant="caption">
+            New York
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            New York
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            10022
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            123-456-7890
+          </Typography>
+          <Typography className={classes.caption} variant="caption">
+            john@gmail.com
+          </Typography>
+        </div>
       </CardContent>
     </Card>
   )
 }
 
-export default YelpRating
+export default StudentInfo
