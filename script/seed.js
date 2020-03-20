@@ -11,7 +11,10 @@ async function seed() {
     User.create({
       firstName: 'John',
       lastName: 'Doe',
-      address: '123 Main St. Westchester, NY 10707',
+      address: '123 Main Street',
+      city: 'Westchester',
+      state: 'NY',
+      zip: 10707,
       phone: '(xxx) xxx-xxxx',
       school: 'Xavier, `21',
       email: 'ryan@gmail.com',
@@ -20,7 +23,10 @@ async function seed() {
     User.create({
       firstName: 'Alan',
       lastName: 'Reed',
-      address: '123 Main Ave. New York, NY 10707',
+      address: '123 Main Avenue',
+      city: 'New York',
+      state: 'NY',
+      zip: 10707,
       phone: '(xxx) xxx-xxxx',
       school: 'Xavier, `21',
       email: 'alan@gmail.com',

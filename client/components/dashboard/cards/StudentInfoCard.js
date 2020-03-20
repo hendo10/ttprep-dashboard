@@ -1,89 +1,79 @@
 import React from 'react'
-import clsx from 'clsx'
-import {makeStyles} from '@material-ui/styles'
-import {Card, CardContent, Grid, Typography} from '@material-ui/core'
-// import HomeIcon from '@material-ui/icons/Home'
+import {makeStyles} from '@material-ui/core/styles'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import Paper from '@material-ui/core/Paper'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: '85%',
-    width: '90%'
+const useStyles = makeStyles({
+  table: {
+    minWidth: 850
   },
-  content: {
+  header: {
     alignItems: 'center',
-    display: 'flex'
-  },
-  title: {
-    fontWeight: 700
-  },
-  avatar: {
-    backgroundColor: theme.palette.primary.main,
-    height: 50,
-    width: 50
-  },
-  icon: {
-    height: 32,
-    width: 32
-  },
-  difference: {
-    marginTop: theme.spacing(2),
-    display: 'flex',
-    alignItems: 'center'
-  },
-  differenceIcon: {
-    color: theme.palette.error.dark
-  },
-  differenceValue: {
-    color: theme.palette.error.dark,
-    marginRight: theme.spacing(1)
+    fontWeight: 'fontWeightBold'
   }
-}))
+})
 
 const StudentInfo = props => {
-  const {className, ...rest} = props
+  // const {className, ...rest} = props
 
   const classes = useStyles()
+  console.log('this.props', props)
 
   return (
-    <Card {...rest} className={clsx(classes.root, className)}>
-      <CardContent>
-        <Grid container justify="space-between">
-          <Grid item>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-              variant="body2"
-            >
-              Student Details
-            </Typography>
-            <Typography variant="h5">
-              {props.restaurantInfo.restaurantName}
-            </Typography>
-          </Grid>
-        </Grid>
-        <div className={classes.difference}>
-          <Typography className={classes.caption} variant="caption">
-            52 Gansevoort Street
-          </Typography>
-          <Typography className={classes.caption} variant="caption">
-            New York
-          </Typography>
-          <Typography className={classes.caption} variant="caption">
-            New York
-          </Typography>
-          <Typography className={classes.caption} variant="caption">
-            10022
-          </Typography>
-          <Typography className={classes.caption} variant="caption">
-            123-456-7890
-          </Typography>
-          <Typography className={classes.caption} variant="caption">
-            john@gmail.com
-          </Typography>
-        </div>
-      </CardContent>
-    </Card>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Student Details</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell width="30%">Name:</TableCell>
+            <TableCell align="left">
+              {`${props.studentInfo.firstName} ${props.studentInfo.lastName}`}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="30%">Address:</TableCell>
+            <TableCell width="70%" align="left">
+              {props.studentInfo.address}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="30%" />
+            <TableCell width="70%" align="left">
+              {`${props.studentInfo.city}, ${props.studentInfo.state} ${
+                props.studentInfo.zip
+              }`}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="30%">Phone:</TableCell>
+            <TableCell width="70%" align="left">
+              {props.studentInfo.phone}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="30%">Email:</TableCell>
+            <TableCell width="70%" align="left">
+              {props.studentInfo.email}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="30%">School:</TableCell>
+            <TableCell width="70%" align="left">
+              {props.studentInfo.school}
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   )
 }
 
