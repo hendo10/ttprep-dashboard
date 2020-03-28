@@ -40,6 +40,11 @@ const User = db.define('user', {
     unique: true,
     allowNull: false
   },
+  imageURL: {
+    type: Sequelize.TEXT,
+    defaultValue:
+      'https://am23.mediaite.com/tms/cnt/uploads/2019/06/A-Fan-Was-Sent-to-the-Hospital-Because-of-Crowds-at-the-Far-from-Home-Premiere-1200x820.jpg'
+  },
   password: {
     type: Sequelize.STRING,
     // Making `.password` act like a func hides it when serializing to JSON.

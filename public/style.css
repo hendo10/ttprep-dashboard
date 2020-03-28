@@ -48,7 +48,7 @@ form div {
   flex-direction: column;
   justify-content: flex-start;
   min-width: 150px;
-  max-width: 150px;
+  /* max-width: 150px; */
   min-height: 100vh;
   height: auto;
   box-shadow: 4px 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -57,7 +57,7 @@ form div {
 }
 
 .sidebar-nav-cont {
-  position: fixed;
+  /* position: fixed; */
   max-width: 150px;
 }
 

@@ -1,31 +1,47 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-// import PeakTimeGraph from './PeakTimeGraph'
-// import LineGraphRevenue from './LineGraphRevenue'
-// import EnhancedTable from './DOWAnalysisTable'
 
 import {
-  // getDOWAnalysisTable,
-  getStudentInfo
+  getStudentInfo,
+  getStudentExam,
+  getStudentExamDetails,
+  getMathExamDetails,
+  getReadingExamDetails,
+  getWritingExamDetails
 } from '../../store/summaryReducer'
 
 import StudentInfo from './cards/StudentInfoCard'
+import StudentExam from './cards/StudentExam'
+import StudentMathDetails from './cards/StudentMathDetails'
+import StudentReadingDetails from './cards/StudentReadingDetails'
+import StudentWritingDetails from './cards/StudentWritingDetails'
 import {Grid, Divider} from '@material-ui/core'
 
 class StudentSummary extends Component {
-  // constructor() {
-  //   super()
-  //   // this.getTotalRevenue = this.getTotalRevenue.bind(this)
-  // }
-
-  async componentDidMount() {
-    // this.props.loadDOWAnalysisTable()
-    await this.props.loadStudentInfo(2)
+  constructor() {
+    super()
+    // this.updateSectionDetails = this.updatedSectionDetails.bind(this)
   }
 
-  render() {
-    console.log('this.props', this.props)
+  async componentDidMount() {
+    let userId = this.props.user.id
 
+    await this.props.loadStudentInfo(userId)
+    await this.props.loadStudentExam(userId)
+    // await this.props.loadStudentExamDetails(userId,1)
+    await this.props.loadMathExamDetails(userId, 1)
+    await this.props.loadReadingExamDetails(userId, 1)
+    await this.props.loadWritingExamDetails(userId, 1)
+  }
+
+  // async updateSectionDetails() {
+  // let userId = this.props.user.id
+  // await this.props.loadMathExamDetails(userId, this.props.StudentExam.id)
+  // this.props.loadReadingExamDetails(userId, this.props.StudentExam.id),
+  // this.props.loadWritingExamDetails(userId, this.props.StudentExam.id)
+  // }
+
+  render() {
     return (
       <div className="summary-page-container">
         {this.props.studentInfo[0] ? (
@@ -47,19 +63,32 @@ class StudentSummary extends Component {
           </div>
         ) : null}
         <Divider />
-        <div>
-          To be updated
-          {/* <CalendarContainer />
-          <Divider />
-        </div>
-        <div className="summary-chart-container">
-          <LineGraphRevenue />
-          <PeakTimeGraph />
-          <Divider />
-        </div>
-        <div className="summary-table-container">
-          <EnhancedTable DOWAnalysisTable={this.props.DOWAnalysisTable} /> */}
-        </div>
+        {this.props.studentInfo[0] ? (
+          <div className="card-container">
+            {/* <Grid container spacing={4}> */}
+            {/* <Grid item lg={3} sm={6} xl={3} xs={12}> */}
+            <StudentExam studentExam={this.props.studentExam} />
+            {/* </Grid> */}
+            {/* </Grid> */}
+          </div>
+        ) : null}
+        <Divider />
+        {this.props.studentInfo[0] ? (
+          <div className="card-container">
+            {/* <Grid container spacing={4}> */}
+            {/* <Grid item lg={3} sm={6} xl={3} xs={12}> */}
+            <StudentReadingDetails
+              readingExamDetails={this.props.readingExamDetails}
+            />
+            <StudentWritingDetails
+              writingExamDetails={this.props.writingExamDetails}
+            />
+            <StudentMathDetails mathExamDetails={this.props.mathExamDetails} />
+
+            {/* </Grid> */}
+            {/* </Grid> */}
+          </div>
+        ) : null}
       </div>
     )
   }
@@ -70,15 +99,37 @@ class StudentSummary extends Component {
  */
 
 const mapStateToProps = state => {
-  const {studentInfo} = state.summary
+  const {
+    studentInfo,
+    studentExam,
+    studentExamDetails,
+    mathExamDetails,
+    readingExamDetails,
+    writingExamDetails
+  } = state.summary
   return {
-    studentInfo
+    user: state.user,
+    studentInfo,
+    studentExam,
+    studentExamDetails,
+    mathExamDetails,
+    readingExamDetails,
+    writingExamDetails
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadStudentInfo: userId => dispatch(getStudentInfo(userId))
+    loadStudentInfo: userId => dispatch(getStudentInfo(userId)),
+    loadStudentExam: userId => dispatch(getStudentExam(userId)),
+    loadStudentExamDetails: (userId, examId) =>
+      dispatch(getStudentExamDetails(userId, examId)),
+    loadMathExamDetails: (userId, examId) =>
+      dispatch(getMathExamDetails(userId, examId)),
+    loadReadingExamDetails: (userId, examId) =>
+      dispatch(getReadingExamDetails(userId, examId)),
+    loadWritingExamDetails: (userId, examId) =>
+      dispatch(getWritingExamDetails(userId, examId))
   }
 }
 

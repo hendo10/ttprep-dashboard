@@ -10,11 +10,18 @@ import Paper from '@material-ui/core/Paper'
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 850
+    minWidth: 650
   },
   header: {
     alignItems: 'center',
     fontWeight: 'fontWeightBold'
+  },
+  columnCategories: {
+    width: 50
+  },
+  columnDetails: {
+    // width: 100,
+    align: 'left'
   }
 })
 
@@ -22,52 +29,51 @@ const StudentInfo = props => {
   // const {className, ...rest} = props
 
   const classes = useStyles()
-  console.log('this.props', props)
-
+  // console.log('hello', props.user)
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Student Details</TableCell>
+            <TableCell align="center">Student Details</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell width="30%">Name:</TableCell>
-            <TableCell align="left">
+            <TableCell className={classes.columnCategories}>Name:</TableCell>
+            <TableCell className={classes.columnDetails}>
               {`${props.studentInfo.firstName} ${props.studentInfo.lastName}`}
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell width="30%">Address:</TableCell>
-            <TableCell width="70%" align="left">
+            <TableCell className={classes.columnCategories}>Address:</TableCell>
+            <TableCell className={classes.columnDetails}>
               {props.studentInfo.address}
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell width="30%" />
-            <TableCell width="70%" align="left">
+            <TableCell className={classes.columnCategories} />
+            <TableCell className={classes.columnDetails}>
               {`${props.studentInfo.city}, ${props.studentInfo.state} ${
                 props.studentInfo.zip
               }`}
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell width="30%">Phone:</TableCell>
-            <TableCell width="70%" align="left">
+            <TableCell className={classes.columnCategories}>Phone:</TableCell>
+            <TableCell className={classes.columnDetails}>
               {props.studentInfo.phone}
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell width="30%">Email:</TableCell>
-            <TableCell width="70%" align="left">
+            <TableCell className={classes.columnCategories}>Email:</TableCell>
+            <TableCell className={classes.columnDetails}>
               {props.studentInfo.email}
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell width="30%">School:</TableCell>
-            <TableCell width="70%" align="left">
+            <TableCell className={classes.columnCategories}>School:</TableCell>
+            <TableCell className={classes.columnDetails}>
               {props.studentInfo.school}
             </TableCell>
           </TableRow>
