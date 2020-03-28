@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     minHeight: 'fit-content',
-    maxWidth: 150,
+    maxWidth: 200,
     paddingTop: 10,
     paddingBottom: 10,
     marginTop: 15
@@ -26,24 +26,23 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Profile = props => {
-  const {className, ...rest} = props
+const UserProfile = props => {
+  const {className} = props
 
   const classes = useStyles()
 
   const user = {
     name: `${props.firstName} ${props.lastName}`,
-    avatar: props.imgUrl,
-    bio: props.title
+    avatar: props.imageUrl
   }
 
   return (
-    <div {...rest} className={clsx(classes.root, className)}>
+    <div className={clsx(classes.root, className)}>
       <Avatar alt="Person" className={classes.avatar} src={user.avatar} />
       <Typography className={classes.name} variant="h6">
         {user.name}
       </Typography>
-      <Typography variant="body2">{user.bio}</Typography>
+      <Typography variant="body2">Student</Typography>
     </div>
   )
 }
@@ -55,13 +54,12 @@ const mapState = state => {
   return {
     firstName: state.user.firstName,
     lastName: state.user.lastName,
-    title: state.user.title,
-    imgUrl: state.user.imgUrl
+    imageUrl: state.user.imageURL
   }
 }
 
-export default connect(mapState)(Profile)
+export default connect(mapState)(UserProfile)
 
-Profile.propTypes = {
+UserProfile.propTypes = {
   className: PropTypes.string
 }

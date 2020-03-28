@@ -4,17 +4,18 @@ import DashboardIcon from '@material-ui/icons/Dashboard'
 import FunctionsIcon from '@material-ui/icons/Functions'
 import InsertChartOutlinedIcon from '@material-ui/icons/InsertChartOutlined'
 import UserProfile from './UserProfile'
-import {Divider} from '@material-ui/core'
+// import SidebarNav from './SidebarNav'
+// import {Divider} from '@material-ui/core'
 
 const pages = [
   {
     title: 'SUMMARY',
-    href: '/summary',
+    href: '/home',
     icon: <DashboardIcon />
   },
   {
     title: 'BUSINESS ANALYTICS',
-    href: '/businessanalytics',
+    href: '/home',
     icon: <InsertChartOutlinedIcon />,
     subPage: {
       title: 'HOME',
@@ -24,7 +25,7 @@ const pages = [
   },
   {
     title: 'CUSTOM ANALYTICS',
-    href: '/customizedQuery',
+    href: '/home',
     icon: <FunctionsIcon />
   }
 ]
@@ -34,6 +35,7 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <div className="sidebar-nav-cont">
         <UserProfile />
+        {/* <SidebarNav pages={pages} /> */}
       </div>
     </div>
   )

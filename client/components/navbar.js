@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-// import {logout} from '../store'
+import {logout} from '../store'
 
 //BELOW IS MATERIAL UI, ABOVE IS NORMAL REACT
 import {makeStyles} from '@material-ui/core/styles'

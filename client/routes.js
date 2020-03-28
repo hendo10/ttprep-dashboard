@@ -17,9 +17,9 @@ class Routes extends Component {
 
     return isLoggedIn ? (
       <div className="routes-cont">
-        {/* <Sidebar /> */}
+        <Sidebar />
         <Switch>
-          <Route exact path="/" component={StudentSummary} />
+          <Route exact path="/home" component={StudentSummary} />
           <Route path="/summary" component={StudentSummary} />
         </Switch>
       </div>
