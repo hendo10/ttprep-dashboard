@@ -16,6 +16,9 @@ import StudentMathDetails from './cards/StudentMathDetails'
 import StudentReadingDetails from './cards/StudentReadingDetails'
 import StudentWritingDetails from './cards/StudentWritingDetails'
 import {Grid, Divider} from '@material-ui/core'
+import AverageExamScore from './cards/AverageExamScore'
+import AverageMathScore from './cards/AverageMathScore'
+import AverageRWScore from './cards/AverageRWScore'
 
 class StudentSummary extends Component {
   constructor() {
@@ -48,7 +51,23 @@ class StudentSummary extends Component {
           <div className="card-container">
             <Grid container spacing={4}>
               <Grid item lg={3} sm={6} xl={3} xs={12}>
+                {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
+                <AverageExamScore />
+              </Grid>
+
+              <Grid item lg={3} sm={6} xl={3} xs={12}>
+                {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
+                <AverageRWScore />
+              </Grid>
+
+              <Grid item lg={3} sm={6} xl={3} xs={12}>
+                {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
+                <AverageMathScore />
+              </Grid>
+
+              <Grid item lg={3} sm={6} xl={3} xs={12}>
                 <StudentInfo studentInfo={this.props.studentInfo[0]} />
+                {/* <AverageMathScore /> */}
               </Grid>
 
               {/* Card for course info

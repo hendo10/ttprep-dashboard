@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import {makeStyles} from '@material-ui/styles'
 import {Avatar, Typography} from '@material-ui/core'
 import {connect} from 'react-redux'
+// import StudentInfo from './dashboard/cards/StudentInfoCard'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,6 +44,7 @@ const UserProfile = props => {
         {user.name}
       </Typography>
       <Typography variant="body2">Student</Typography>
+      {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
     </div>
   )
 }
