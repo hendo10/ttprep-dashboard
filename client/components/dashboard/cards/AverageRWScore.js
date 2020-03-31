@@ -69,7 +69,7 @@ const AverageRWScore = props => {
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
-    cutoutPercentage: 50,
+    cutoutPercentage: 75,
     layout: {padding: 0},
     tooltips: {
       enabled: true,
