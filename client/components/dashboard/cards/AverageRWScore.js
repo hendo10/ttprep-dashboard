@@ -64,7 +64,7 @@ const AverageRWScore = props => {
 
   const options = {
     legend: {
-      display: false
+      display: true
     },
     responsive: true,
     maintainAspectRatio: false,

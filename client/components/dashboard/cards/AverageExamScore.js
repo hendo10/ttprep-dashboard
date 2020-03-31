@@ -64,7 +64,7 @@ const AverageExamScore = props => {
 
   const options = {
     legend: {
-      display: false
+      display: true
     },
     responsive: true,
     maintainAspectRatio: false,
@@ -82,6 +82,9 @@ const AverageExamScore = props => {
       bodyFontColor: theme.palette.text.secondary,
       footerFontColor: theme.palette.text.secondary
     }
+    // formatter: value => {
+    //   return value
+    // }
   }
 
   const scores = [
