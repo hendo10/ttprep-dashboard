@@ -1,5 +1,5 @@
 import React from 'react'
-import {makeStyles} from '@material-ui/core/styles'
+import {makeStyles, withStyles} from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -25,6 +25,12 @@ const useStyles = makeStyles({
   }
 })
 
+const StyledHeaderCell = withStyles({
+  head: {
+    fontWeight: 'bold'
+  }
+})(TableCell)
+
 const StudentReadingDetails = props => {
   // const {className, ...rest} = props
 
@@ -35,11 +41,11 @@ const StudentReadingDetails = props => {
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Category</TableCell>
-            <TableCell>Correct</TableCell>
-            <TableCell>Incorrect</TableCell>
-            <TableCell>Result (%)</TableCell>
-            <TableCell>Previous (%)</TableCell>
+            <StyledHeaderCell>Category</StyledHeaderCell>
+            <StyledHeaderCell>Correct</StyledHeaderCell>
+            <StyledHeaderCell>Incorrect</StyledHeaderCell>
+            <StyledHeaderCell>Result (%)</StyledHeaderCell>
+            <StyledHeaderCell>Previous (%)</StyledHeaderCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -47,13 +53,28 @@ const StudentReadingDetails = props => {
             return (
               <TableRow hover role="checkbox" tabIndex={-1} key={section.id}>
                 <TableCell>{section.category.categoryName}</TableCell>
-                <TableCell>{section.correct}</TableCell>
-                <TableCell>{section.incorrect}</TableCell>
-                <TableCell>{section.score}</TableCell>
-                <TableCell> </TableCell>
+                <TableCell align="center">{section.correct}</TableCell>
+                <TableCell align="center">{section.incorrect}</TableCell>
+                <TableCell align="center">{section.score}</TableCell>
+                <TableCell align="center"> </TableCell>
               </TableRow>
             )
           })}
+          <TableRow role="checkbox" tabIndex={-1}>
+            <TableCell>Total</TableCell>
+            <TableCell align="center">
+              {props.readingExamDetails.reduce((accumulator, score) => {
+                return score.correct + accumulator
+              }, 0)}
+            </TableCell>
+            <TableCell align="center">
+              {props.readingExamDetails.reduce((accumulator, score) => {
+                return score.incorrect + accumulator
+              }, 0)}
+            </TableCell>
+            <TableCell align="center" />
+            <TableCell align="center" />
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>

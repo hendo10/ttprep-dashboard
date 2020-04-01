@@ -51,49 +51,37 @@ class StudentSummary extends Component {
     return (
       <div className="summary-page-container">
         {this.props.studentInfo[0] ? (
-          <div className="card-container">
-            <Grid container spacing={4}>
-              <Grid item lg={3} sm={6} xl={3} xs={12}>
-                {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
-                <AverageExamScore />
-              </Grid>
-
-              <Grid item lg={3} sm={6} xl={3} xs={12}>
-                {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
-                <AverageRWScore />
-              </Grid>
-
-              <Grid item lg={3} sm={6} xl={3} xs={12}>
-                {/* <StudentInfo studentInfo={this.props.studentInfo[0]} /> */}
-                <AverageMathScore />
-              </Grid>
-
-              <Grid item lg={3} sm={6} xl={3} xs={12}>
+          <div className="graphs-card-container">
+            <AverageExamScore studentExam={this.props.studentExam} />
+            <AverageRWScore studentExam={this.props.studentExam} />
+            <AverageMathScore studentExam={this.props.studentExam} />
+            {/* <Grid item lg={3} sm={6} xl={3} xs={12}>
                 <StudentInfo studentInfo={this.props.studentInfo[0]} />
-                {/* <AverageMathScore /> */}
-              </Grid>
-
-              {/* Card for course info
-              <Grid item lg={3} sm={6} xl={3} xs={12}>
-                <TotalRevenue
-                  totalRevenue={this.getTotalRevenue(
-                    this.props.revenueVsTime.oneYear.revenue
-                  )}
-                />
               </Grid> */}
-            </Grid>
+          </div>
+        ) : null}
+
+        <Divider />
+        {this.props.studentInfo[0] ? (
+          <div className="card-container">
+            <StudentExam studentExam={this.props.studentExam} />
           </div>
         ) : null}
         <Divider />
         {this.props.studentInfo[0] ? (
-          <div className="card-container">
-            {/* <Grid container spacing={4}> */}
-            {/* <Grid item lg={3} sm={6} xl={3} xs={12}> */}
-            <StudentExam studentExam={this.props.studentExam} />
-            {/* </Grid> */}
-            {/* </Grid> */}
+          <div className="totalscore-card-container">
+            <TotalReadingScore
+              readingExamDetails={this.props.readingExamDetails}
+            />
+
+            <TotalWritingScore
+              writingExamDetails={this.props.writingExamDetails}
+            />
+
+            <TotalMathScore mathExamDetails={this.props.mathExamDetails} />
           </div>
         ) : null}
+
         <Divider />
         {this.props.studentInfo[0] ? (
           <div className="card-container">
@@ -109,18 +97,6 @@ class StudentSummary extends Component {
 
             {/* </Grid> */}
             {/* </Grid> */}
-          </div>
-        ) : null}
-        <Divider />
-        {this.props.studentInfo[0] ? (
-          <div className="totalscore-card-container">
-            <TotalReadingScore
-              readingExamDetails={this.props.readingExamDetails}
-            />
-            <TotalWritingScore
-              writingExamDetails={this.props.writingExamDetails}
-            />
-            <TotalMathScore mathExamDetails={this.props.mathExamDetails} />
           </div>
         ) : null}
       </div>

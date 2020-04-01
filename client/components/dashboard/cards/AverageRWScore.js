@@ -19,7 +19,7 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     height: '90%',
-    width: '100%'
+    width: '33%'
   },
   chartContainer: {
     position: 'relative',
@@ -45,16 +45,23 @@ const AverageRWScore = props => {
   const classes = useStyles()
   const theme = useTheme()
 
+  const avgScore =
+    props.studentExam.reduce((accumulator, score) => {
+      return score.readingwriting + accumulator
+    }, 0) / props.studentExam.length
+
+  const totalDiff = 800 - avgScore
+
   const data = {
     datasets: [
       {
-        data: [400, 400],
+        data: [avgScore, totalDiff],
         backgroundColor: [
           theme.palette.primary.main,
           theme.palette.error.main,
           theme.palette.warning.main
         ],
-        borderWidth: 5,
+        borderWidth: 1,
         borderColor: theme.palette.white,
         hoverBorderColor: theme.palette.white
       }
@@ -64,12 +71,12 @@ const AverageRWScore = props => {
 
   const options = {
     legend: {
-      display: true
+      display: false
     },
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
-    cutoutPercentage: 75,
+    cutoutPercentage: 85,
     layout: {padding: 0},
     tooltips: {
       enabled: true,
@@ -87,12 +94,12 @@ const AverageRWScore = props => {
   const scores = [
     {
       title: 'Avg Score',
-      value: '400',
+      value: avgScore,
       color: theme.palette.primary.main
     },
     {
       title: 'Avg Missed',
-      value: '400',
+      value: totalDiff,
       color: theme.palette.error.main
     }
   ]

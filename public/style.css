@@ -547,8 +547,17 @@ form div {
 
 /* ------CARD CONTAINER ---------- */
 .card-container {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
+  max-width: 75vw;
+  margin-left: 1em;
+  padding: 1em;
+  /* background-color: rgb(239, 239, 239); */
+}
+
+/* ------TOTAL SCORE CARD CONTAINER ---------- */
+.graphs-card-container {
+  display: flex;
   max-width: 90vw;
   margin-left: 1em;
   padding: 1em;
