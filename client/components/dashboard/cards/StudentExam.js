@@ -1,5 +1,5 @@
 import React from 'react'
-import {makeStyles} from '@material-ui/core/styles'
+import {makeStyles, withStyles} from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -14,6 +14,12 @@ const useStyles = makeStyles({
   }
 })
 
+const StyledHeaderCell = withStyles({
+  head: {
+    fontWeight: 'bold'
+  }
+})(TableCell)
+
 const StudentExam = props => {
   // const {className, ...rest} = props
 
@@ -24,11 +30,11 @@ const StudentExam = props => {
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Test</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Reading/Writing</TableCell>
-            <TableCell>Math</TableCell>
-            <TableCell>Total</TableCell>
+            <StyledHeaderCell>Test</StyledHeaderCell>
+            <StyledHeaderCell>Date</StyledHeaderCell>
+            <StyledHeaderCell>R/W</StyledHeaderCell>
+            <StyledHeaderCell>Math</StyledHeaderCell>
+            <StyledHeaderCell>Total</StyledHeaderCell>
           </TableRow>
         </TableHead>
         <TableBody>
