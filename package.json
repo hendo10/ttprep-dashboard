@@ -43,6 +43,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
+    "@mui-treasury/styles": "^1.1.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
