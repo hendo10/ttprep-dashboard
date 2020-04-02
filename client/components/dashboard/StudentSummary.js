@@ -88,12 +88,17 @@ class StudentSummary extends Component {
             {/* <Grid container spacing={4}> */}
             {/* <Grid item lg={3} sm={6} xl={3} xs={12}> */}
             <StudentReadingDetails
+              studentExam={this.props.studentExam}
               readingExamDetails={this.props.readingExamDetails}
             />
             <StudentWritingDetails
+              studentExam={this.props.studentExam}
               writingExamDetails={this.props.writingExamDetails}
             />
-            <StudentMathDetails mathExamDetails={this.props.mathExamDetails} />
+            <StudentMathDetails
+              studentExam={this.props.studentExam}
+              mathExamDetails={this.props.mathExamDetails}
+            />
 
             {/* </Grid> */}
             {/* </Grid> */}
