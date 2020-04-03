@@ -61,8 +61,8 @@ const StudentMathDetails = props => {
               <StyledHeaderCell>Category</StyledHeaderCell>
               <StyledHeaderCell>Correct</StyledHeaderCell>
               <StyledHeaderCell>Incorrect</StyledHeaderCell>
-              <StyledHeaderCell>Result (%)</StyledHeaderCell>
-              <StyledHeaderCell>Previous (%)</StyledHeaderCell>
+              <StyledHeaderCell align="center">Result (%)</StyledHeaderCell>
+              <StyledHeaderCell align="center">Previous (%)</StyledHeaderCell>
             </TableRow>
           </TableHead>
           <TableBody>
