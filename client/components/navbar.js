@@ -12,13 +12,27 @@ import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    display: 'flex',
+    justifyContent: 'flex-start'
+    // flexGrow: 1
   },
   menuButton: {
     marginRight: theme.spacing(1)
   },
-  title: {
-    flexGrow: 1
+  // title: {
+  //   flexGrow: 1
+  // },
+  img: {
+    width: '300px',
+    height: '50px',
+    justifyContent: 'flex-start'
+    // flexGrow: 1
+    // marginLeft: theme.spacing()
+  },
+  buttonStyle: {
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'flex-end'
   }
 }))
 
@@ -29,17 +43,18 @@ const Navbar = ({handleClick, isLoggedIn}) => {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          {/* <Typography variant="h6" className={classes.title}>
             TestTakers
-          </Typography>
+          </Typography> */}
+          <img className={classes.img} src="TestTakersBlueLogo.png" />
           {isLoggedIn ? (
-            <div>
+            <div className={classes.buttonStyle}>
               <Button color="inherit" onClick={handleClick}>
                 Logout
               </Button>
             </div>
           ) : (
-            <div>
+            <div className={classes.buttonStyle}>
               <Button color="inherit" href="/login">
                 Login
               </Button>

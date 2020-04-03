@@ -60,14 +60,14 @@ class StudentSummary extends Component {
               </Grid> */}
           </div>
         ) : null}
-
-        <Divider />
+        <br />
+        {/* <Divider /> */}
         {this.props.studentInfo[0] ? (
           <div className="card-container">
             <StudentExam studentExam={this.props.studentExam} />
           </div>
         ) : null}
-        <Divider />
+        {/* <Divider /> */}
         {this.props.studentInfo[0] ? (
           <div className="totalscore-card-container">
             <TotalReadingScore
@@ -82,7 +82,7 @@ class StudentSummary extends Component {
           </div>
         ) : null}
 
-        <Divider />
+        {/* <Divider /> */}
         {this.props.studentInfo[0] ? (
           <div className="card-container">
             {/* <Grid container spacing={4}> */}
