@@ -13,7 +13,8 @@ import Button from '@material-ui/core/Button'
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    color: theme.palette.navbar
     // flexGrow: 1
   },
   menuButton: {
