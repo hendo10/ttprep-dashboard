@@ -59,7 +59,8 @@ router.get('/:userId', async (req, res, next) => {
 router.get('/:userId/exams', async (req, res, next) => {
   try {
     const exam = await ScoreByExam.findAll({
-      where: {userId: req.params.userId}
+      where: {userId: req.params.userId},
+      order: [['id', 'DESC']]
     })
     res.json(exam)
   } catch (err) {
@@ -74,7 +75,11 @@ router.get('/:userId/exams/:examId', async (req, res, next) => {
         userId: req.params.userId,
         examId: req.params.examId
       },
-      include: {model: Category, attributes: ['categoryName']}
+      include: {
+        model: Category,
+        attributes: ['categoryName'],
+        order: [['id', 'ASC']]
+      }
     })
     res.json(exam)
   } catch (err) {
@@ -92,7 +97,11 @@ router.get('/:userId/exams/:examId/reading', async (req, res, next) => {
       },
       include: [
         {model: Section, attributes: ['name']},
-        {model: Category, attributes: ['categoryName']}
+        {
+          model: Category,
+          attributes: ['categoryName'],
+          order: [['id', 'ASC']]
+        }
       ]
     })
     res.json(exam)
@@ -111,7 +120,11 @@ router.get('/:userId/exams/:examId/writing', async (req, res, next) => {
       },
       include: [
         {model: Section, attributes: ['name']},
-        {model: Category, attributes: ['categoryName']}
+        {
+          model: Category,
+          attributes: ['categoryName'],
+          order: [['id', 'ASC']]
+        }
       ]
     })
     res.json(exam)
@@ -130,7 +143,11 @@ router.get('/:userId/exams/:examId/math', async (req, res, next) => {
       },
       include: [
         {model: Section, attributes: ['name']},
-        {model: Category, attributes: ['categoryName']}
+        {
+          model: Category,
+          attributes: ['categoryName'],
+          order: [['id', 'ASC']]
+        }
       ]
     })
     res.json(exam)
