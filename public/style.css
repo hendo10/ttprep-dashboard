@@ -16,7 +16,7 @@ label {
 } */
 
 body {
-  display: flex;
+  /* display: flex; */
 }
 form div {
   margin: 1em;
@@ -86,10 +86,10 @@ form div {
 
 /* ------SUMMARY-------- */
 .summary-page-container {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: space-between;
+  /* align-items: space-between; */
   justify-content: space-between;
   width: 100%;
   /* margin-left: 150px; */
@@ -563,7 +563,8 @@ form div {
 
 /* ------CARD CONTAINER ---------- */
 .card-container {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   max-width: 75vw;
   margin-left: 1em;
@@ -574,7 +575,8 @@ form div {
 /* ------TOTAL SCORE CARD CONTAINER ---------- */
 .graphs-card-container {
   display: flex;
-  max-width: 90vw;
+  justify-content: space-between;
+  max-width: 65%;
   margin-left: 1em;
   padding: 1em;
   background-color: rgb(239, 239, 239);
@@ -583,7 +585,8 @@ form div {
 /* ------TOTAL SCORE CARD CONTAINER ---------- */
 .totalscore-card-container {
   display: flex;
-  max-width: 90vw;
+  justify-content: space-between;
+  max-width: 57%;
   margin-left: 1em;
   padding: 1em;
   background-color: rgb(239, 239, 239);

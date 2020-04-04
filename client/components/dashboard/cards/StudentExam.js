@@ -18,7 +18,7 @@ const useStyles = makeStyles(({spacing}) => ({
     marginTop: 40,
     borderRadius: spacing(0.5),
     transition: '0.3s',
-    width: '90%',
+    width: '65%',
     overflow: 'initial',
     background: '#ffffff'
   },
@@ -60,9 +60,9 @@ const StudentExam = props => {
             <TableRow>
               <StyledHeaderCell>Test</StyledHeaderCell>
               <StyledHeaderCell>Date</StyledHeaderCell>
-              <StyledHeaderCell>R/W</StyledHeaderCell>
-              <StyledHeaderCell>Math</StyledHeaderCell>
-              <StyledHeaderCell>Total</StyledHeaderCell>
+              <StyledHeaderCell align="center">R/W</StyledHeaderCell>
+              <StyledHeaderCell align="center">Math</StyledHeaderCell>
+              <StyledHeaderCell align="center">Total</StyledHeaderCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -70,9 +70,9 @@ const StudentExam = props => {
               <TableRow hover role="checkbox" key={exam.id}>
                 <TableCell>{exam.examId}</TableCell>
                 <TableCell>{exam.date}</TableCell>
-                <TableCell>{exam.readingwriting}</TableCell>
-                <TableCell>{exam.math}</TableCell>
-                <TableCell>{exam.total}</TableCell>
+                <TableCell align="center">{exam.readingwriting}</TableCell>
+                <TableCell align="center">{exam.math}</TableCell>
+                <TableCell align="center">{exam.total}</TableCell>
               </TableRow>
             ))}
           </TableBody>

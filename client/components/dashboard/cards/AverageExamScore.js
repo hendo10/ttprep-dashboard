@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 import {makeStyles, useTheme, withStyles} from '@material-ui/styles'
 import {
   Card,
-  CardHeader,
+  // CardHeader,
   CardContent,
   // IconButton,
-  Divider,
+  // Divider,
   Typography
 } from '@material-ui/core'
 // import LaptopMacIcon from '@material-ui/icons/LaptopMac';
@@ -20,6 +20,12 @@ const useStyles = makeStyles(theme => ({
   root: {
     height: '90%',
     width: '33%'
+  },
+  title: {
+    fontSize: 'inherit',
+    fontWeight: 700,
+    margin: '.5em'
+    // color: '#90bbf0'
   },
   chartContainer: {
     position: 'relative',
@@ -111,8 +117,15 @@ const AverageExamScore = props => {
 
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
-      <CardHeader variant="body2" title="Avg Exam Score" />
-      <Divider />
+      <Typography
+        className={classes.title}
+        // color="textSecondary"
+        // gutterBottom
+        variant="body2"
+      >
+        Avg Exam Score
+      </Typography>
+      {/* <CardHeader variant="body2" title="Avg Exam Score" /> */}
       <CardContent>
         <div className={classes.chartContainer}>
           <Doughnut data={data} options={options} />

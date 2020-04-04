@@ -15,7 +15,8 @@ import StudentExam from './cards/StudentExam'
 import StudentMathDetails from './cards/StudentMathDetails'
 import StudentReadingDetails from './cards/StudentReadingDetails'
 import StudentWritingDetails from './cards/StudentWritingDetails'
-import {Grid, Divider} from '@material-ui/core'
+// import {Grid, Divider} from '@material-ui/core'
+// import SummaryScoreHeader from './cards/SummaryScore'
 import AverageExamScore from './cards/AverageExamScore'
 import AverageMathScore from './cards/AverageMathScore'
 import AverageRWScore from './cards/AverageRWScore'
@@ -61,23 +62,23 @@ class StudentSummary extends Component {
           </div>
         ) : null}
         <br />
-        {/* <Divider /> */}
+
         {this.props.studentInfo[0] ? (
           <div className="card-container">
             <StudentExam studentExam={this.props.studentExam} />
           </div>
         ) : null}
-        {/* <Divider /> */}
+
         {this.props.studentInfo[0] ? (
           <div className="totalscore-card-container">
             <TotalReadingScore
               readingExamDetails={this.props.readingExamDetails}
             />
-
+            <br />
             <TotalWritingScore
               writingExamDetails={this.props.writingExamDetails}
             />
-
+            <br />
             <TotalMathScore mathExamDetails={this.props.mathExamDetails} />
           </div>
         ) : null}
@@ -85,23 +86,20 @@ class StudentSummary extends Component {
         {/* <Divider /> */}
         {this.props.studentInfo[0] ? (
           <div className="card-container">
-            {/* <Grid container spacing={4}> */}
-            {/* <Grid item lg={3} sm={6} xl={3} xs={12}> */}
             <StudentReadingDetails
               studentExam={this.props.studentExam}
               readingExamDetails={this.props.readingExamDetails}
             />
+            <br />
             <StudentWritingDetails
               studentExam={this.props.studentExam}
               writingExamDetails={this.props.writingExamDetails}
             />
+            <br />
             <StudentMathDetails
               studentExam={this.props.studentExam}
               mathExamDetails={this.props.mathExamDetails}
             />
-
-            {/* </Grid> */}
-            {/* </Grid> */}
           </div>
         ) : null}
       </div>

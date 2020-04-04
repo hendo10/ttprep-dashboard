@@ -10,10 +10,13 @@ const App = props => {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: '#bbeaff' //this one
+        main: '#24497A'
       },
       secondary: {
         main: '#3B79CC'
+      },
+      nav: {
+        main: '#ffffff'
       }
     }
   })
