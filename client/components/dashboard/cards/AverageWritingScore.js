@@ -3,14 +3,7 @@ import {Doughnut} from 'react-chartjs-2'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import {makeStyles, useTheme} from '@material-ui/styles'
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  // IconButton,
-  Divider,
-  Typography
-} from '@material-ui/core'
+import {Paper, CardContent, Typography} from '@material-ui/core'
 // import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 // import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 // import RefreshIcon from '@material-ui/icons/Refresh';
@@ -18,8 +11,15 @@ import {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: '90%',
-    width: '33%'
+    height: '50%',
+    width: '10rem',
+    padding: '16px'
+  },
+  title: {
+    fontSize: 'inherit',
+    fontWeight: 700,
+    margin: '.5em'
+    // color: '#1663de'
   },
   chartContainer: {
     position: 'relative',
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const AverageRWScore = props => {
+const AverageWritingScore = props => {
   const {className, ...rest} = props
 
   const classes = useStyles()
@@ -105,31 +105,33 @@ const AverageRWScore = props => {
   ]
 
   return (
-    <Card {...rest} className={clsx(classes.root, className)}>
-      <CardHeader variant="h5" title="Avg R/W Score" />
-      <Divider />
+    <Paper {...rest} className={clsx(classes.root, className)}>
+      <Typography
+        className={classes.title}
+        color="textSecondary"
+        // gutterBottom
+        variant="body2"
+      >
+        DIAG 4
+        {/* {`DIAG ${props.studentExam[props.studentExam.length].examId}`} */}
+      </Typography>
+      <Typography className={classes.caption} variant="caption">
+        READING SCORE:
+      </Typography>
       <CardContent>
         <div className={classes.chartContainer}>
           <Doughnut data={data} options={options} />
         </div>
         <div className={classes.stats}>
-          {scores.map(score => (
-            <div className={classes.score} key={score.title}>
-              {/* <span className={classes.deviceIcon}>{device.icon}</span> */}
-              <Typography variant="body3">{score.title}</Typography>
-              <Typography style={{color: score.color}} variant="h5">
-                {score.value}
-              </Typography>
-            </div>
-          ))}
+          <Typography>{avgScore}</Typography>
         </div>
       </CardContent>
-    </Card>
+    </Paper>
   )
 }
 
-AverageRWScore.propTypes = {
+AverageWritingScore.propTypes = {
   className: PropTypes.string
 }
 
-export default AverageRWScore
+export default AverageWritingScore

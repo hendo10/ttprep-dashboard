@@ -572,11 +572,21 @@ form div {
   /* background-color: rgb(239, 239, 239); */
 }
 
+/* ------EXAM HISTORY CARD CONTAINER ---------- */
+.exam-history-card-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 75%;
+  margin-left: 1em;
+  padding: 1em;
+  /* background-color: rgb(239, 239, 239); */
+}
+
 /* ------TOTAL SCORE CARD CONTAINER ---------- */
 .graphs-card-container {
   display: flex;
   justify-content: space-between;
-  max-width: 65%;
+  max-width: 57%;
   margin-left: 1em;
   padding: 1em;
   background-color: rgb(239, 239, 239);

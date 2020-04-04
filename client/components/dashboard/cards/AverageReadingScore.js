@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const AverageMathScore = props => {
+const AverageReadingScore = props => {
   const {className, ...rest} = props
 
   const classes = useStyles()
@@ -47,10 +47,12 @@ const AverageMathScore = props => {
 
   const avgScore =
     props.studentExam.reduce((accumulator, score) => {
-      return score.math + accumulator
+      return score.readingwriting + accumulator
     }, 0) / props.studentExam.length
 
   const totalDiff = 800 - avgScore
+
+  //   const examScore = props.studentExam[props.studentExam.length].readingwriting.toFixed()
 
   const data = {
     datasets: [
@@ -94,12 +96,12 @@ const AverageMathScore = props => {
   const scores = [
     {
       title: 'Avg Score',
-      value: '580',
+      value: avgScore,
       color: theme.palette.primary.main
     },
     {
       title: 'Avg Missed',
-      value: '220',
+      value: totalDiff,
       color: theme.palette.error.main
     }
   ]
@@ -116,7 +118,7 @@ const AverageMathScore = props => {
         {/* {`DIAG ${props.studentExam[props.studentExam.length].examId}`} */}
       </Typography>
       <Typography className={classes.caption} variant="caption">
-        MATH SCORE:
+        WRITING SCORE:
       </Typography>
       <CardContent>
         <div className={classes.chartContainer}>
@@ -130,8 +132,8 @@ const AverageMathScore = props => {
   )
 }
 
-AverageMathScore.propTypes = {
+AverageReadingScore.propTypes = {
   className: PropTypes.string
 }
 
-export default AverageMathScore
+export default AverageReadingScore

@@ -4,7 +4,8 @@ import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import {makeStyles, useTheme, withStyles} from '@material-ui/styles'
 import {
-  Card,
+  // Card,
+  Paper,
   // CardHeader,
   CardContent,
   // IconButton,
@@ -19,13 +20,14 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     height: '90%',
-    width: '33%'
+    width: '27%',
+    alignSelf: 'flex-end'
   },
   title: {
     fontSize: 'inherit',
     fontWeight: 700,
     margin: '.5em'
-    // color: '#90bbf0'
+    // color: '#1663de'
   },
   chartContainer: {
     position: 'relative',
@@ -84,7 +86,7 @@ const AverageExamScore = props => {
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
-    cutoutPercentage: 85,
+    cutoutPercentage: 75,
     layout: {padding: 0},
     tooltips: {
       enabled: true,
@@ -116,14 +118,14 @@ const AverageExamScore = props => {
   ]
 
   return (
-    <Card {...rest} className={clsx(classes.root, className)}>
+    <Paper {...rest} className={clsx(classes.root, className)}>
       <Typography
         className={classes.title}
-        // color="textSecondary"
+        color="textSecondary"
         // gutterBottom
         variant="body2"
       >
-        Avg Exam Score
+        AVG EXAM SCORE
       </Typography>
       {/* <CardHeader variant="body2" title="Avg Exam Score" /> */}
       <CardContent>
@@ -136,7 +138,7 @@ const AverageExamScore = props => {
           <Typography>{avgPercentage}</Typography>
         </div>
       </CardContent>
-    </Card>
+    </Paper>
   )
 }
 
