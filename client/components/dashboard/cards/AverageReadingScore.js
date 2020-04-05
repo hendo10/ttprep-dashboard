@@ -59,7 +59,7 @@ const AverageReadingScore = props => {
       {
         data: [avgScore, totalDiff],
         backgroundColor: [
-          theme.palette.primary.main,
+          theme.palette.secondary.light,
           theme.palette.primary.light,
           theme.palette.warning.main
         ],
@@ -118,7 +118,7 @@ const AverageReadingScore = props => {
         {/* {`DIAG ${props.studentExam[props.studentExam.length].examId}`} */}
       </Typography>
       <Typography className={classes.caption} variant="caption">
-        WRITING SCORE:
+        READING SCORE:
       </Typography>
       <CardContent>
         <div className={classes.chartContainer}>

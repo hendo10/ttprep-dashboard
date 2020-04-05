@@ -67,7 +67,7 @@ const AverageExamScore = props => {
       {
         data: [avgScore, totalDiff],
         backgroundColor: [
-          theme.palette.primary.main,
+          theme.palette.secondary.light,
           theme.palette.primary.light,
           theme.palette.warning.main
         ],

@@ -14,7 +14,8 @@ const App = props => {
         light: '#D3D3D3'
       },
       secondary: {
-        main: '#3B79CC'
+        main: '#3B79CC',
+        light: '#047031'
       },
       nav: {
         main: '#ffffff'
