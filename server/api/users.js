@@ -60,7 +60,7 @@ router.get('/:userId/exams', async (req, res, next) => {
   try {
     const exam = await ScoreByExam.findAll({
       where: {userId: req.params.userId},
-      order: [['id', 'DESC']]
+      order: [['examId', 'ASC']]
     })
     res.json(exam)
   } catch (err) {

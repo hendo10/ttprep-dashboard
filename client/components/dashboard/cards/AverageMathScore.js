@@ -58,7 +58,7 @@ const AverageMathScore = props => {
         data: [avgScore, totalDiff],
         backgroundColor: [
           theme.palette.primary.main,
-          theme.palette.error.main,
+          theme.palette.primary.light,
           theme.palette.warning.main
         ],
         borderWidth: 1,
@@ -100,7 +100,7 @@ const AverageMathScore = props => {
     {
       title: 'Avg Missed',
       value: '220',
-      color: theme.palette.error.main
+      color: theme.palette.primary.light
     }
   ]
 
