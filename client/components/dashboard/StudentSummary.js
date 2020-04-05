@@ -71,7 +71,6 @@ class StudentSummary extends Component {
           </div>
         ) : null}
 
-        <br />
         {this.props.studentInfo[0] ? (
           <div className="totalscore-card-container">
             <TotalReadingScore

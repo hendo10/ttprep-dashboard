@@ -12,13 +12,13 @@ import {Paper, CardContent, Typography} from '@material-ui/core'
 const useStyles = makeStyles(theme => ({
   root: {
     height: '50%',
-    width: '10rem',
+    width: '8rem',
     padding: '16px'
   },
   title: {
     fontSize: 'inherit',
-    fontWeight: 700,
-    margin: '.5em'
+    fontWeight: 700
+    // margin: '.5em'
     // color: '#1663de'
   },
   chartContainer: {
