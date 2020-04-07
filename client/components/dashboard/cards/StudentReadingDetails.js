@@ -66,10 +66,14 @@ const StudentReadingDetails = props => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.readingExamDetails.map(section => {
+            {props.readingExamDetails.map((section, idx) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={section.id}>
-                  <TableCell>{section.category.categoryName}</TableCell>
+                  <TableCell>
+                    <a href="https://forms.gle/km1nSeqfRKWDZG2u6">
+                      {section.category.categoryName}
+                    </a>
+                  </TableCell>
                   <TableCell align="center">{section.correct}</TableCell>
                   <TableCell align="center">{section.incorrect}</TableCell>
                   <TableCell align="center">{section.score}</TableCell>
