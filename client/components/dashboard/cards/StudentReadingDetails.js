@@ -63,6 +63,7 @@ const StudentReadingDetails = props => {
               <StyledHeaderCell>Incorrect</StyledHeaderCell>
               <StyledHeaderCell align="center">Result (%)</StyledHeaderCell>
               <StyledHeaderCell align="center">Previous (%)</StyledHeaderCell>
+              <StyledHeaderCell alight="center" />
             </TableRow>
           </TableHead>
           <TableBody>
@@ -78,6 +79,11 @@ const StudentReadingDetails = props => {
                   <TableCell align="center">{section.incorrect}</TableCell>
                   <TableCell align="center">{section.score}</TableCell>
                   <TableCell align="center"> </TableCell>
+                  <TableCell align="center">
+                    <a href="https://forms.gle/km1nSeqfRKWDZG2u6">
+                      Additional Review
+                    </a>
+                  </TableCell>
                 </TableRow>
               )
             })}
