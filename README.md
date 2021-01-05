@@ -11,7 +11,7 @@ A web dashboard for highschool students enrolled in TestTakers, a company provid
 * The user is able to view scores by sections (Math, Reading, Writing) as well as subcategories within the sections (Algebra, etc.). 
 * The user is able to find supplemental materials for score improvement in each subcategory.
 
-![Student Summary Demo]()
+![Student Summary Demo](https://media.giphy.com/media/hOesdpxAlEcnd8KR2l/giphy.gif)
 
 ## Tech Stack
 
